@@ -14,6 +14,20 @@ router.get('/getUser/:id', function(req, res) {
   })
 })
 
-router.post('/addUser')
+router.post('/addUser', function(req, res) {
+  Users.addUser({
+    username: req.body.username,
+    password: req.body.password,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email,
+  }, function(err, data) {
+    if (!err) {
+      res.send(data);
+    } else {
+      next(err)
+    }
+  })
+})
 
 module.exports = router

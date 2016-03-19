@@ -11,7 +11,6 @@ app.set('view engine', 'jade')
 
 app.use('/', routes)
 app.use('/users', users)
-app.us('/login', )
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
