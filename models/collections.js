@@ -1,8 +1,8 @@
-var db = require('../db.js')
+var DB = require('../db.js')
+var db = DB.getDB()
 
 var createUsers = function(callback) {
-  var db_direct = db.get()
-  db_direct.createCollection("users", function(err, collection) {
+  db.createCollection("users", function(err, collection) {
     if (!err) {
       callback(null, collection)
     } else {
@@ -11,6 +11,17 @@ var createUsers = function(callback) {
   })
 }
 
+var deleteUsers = function(callback) {
+  db.dropCollection("users", function(err, result) {
+    if (!err) {
+      callback(null, result)
+    } else {
+      callback("Error dropping database: users", null)
+    }
+  })
+}
+
 module.exports = {
     createUsers: createUsers,
+    deleteUsers: deleteUsers,
 }
