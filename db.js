@@ -1,10 +1,11 @@
 var MongoClient = require('mongodb').MongoClient
+var async = require('async')
 
 var state = {
   db: null,
 }
 
-exports.connect = function(url, done) {
+var connect = function(url, done) {
   if (state.db) return done()
 
   MongoClient.connect(url, function(err, db) {
@@ -14,11 +15,11 @@ exports.connect = function(url, done) {
   })
 }
 
-exports.get = function() {
+var get = function() {
   return state.db
 }
 
-exports.close = function(done) {
+var close = function(done) {
   if (state.db) {
     state.db.close(function(err, result) {
       state.db = null
@@ -26,4 +27,40 @@ exports.close = function(done) {
       done(err)
     })
   }
+}
+
+var drop = function(done) {
+  if (state.db) {
+    state.db.collections(function(err, collections) {
+      async.each(collections, function(collection, callback) {
+        if (collection.collectionName.indexOf('system') === 0) {
+          return callback()
+        }
+        collection.remove(callback)
+      }, done)
+    })
+  }
+}
+
+var fixtures = function(data, done) {
+  var db = state.db
+  if (!db) {
+    return done(new Error('Missing database connection.'))
+  }
+
+  var names = Object.keys(data.collections)
+  async.each(name, function(name, cb) {
+    db.createCollection(name, function(err, collection) {
+      if (err) return cb(err)
+      collection.insert(data.collections[name], cb)
+    })
+  }, done)
+}
+
+module.exports = {
+  connect: connect,
+  get: get,
+  close: close,
+  drop: drop,
+  fixtures: fixtures,
 }

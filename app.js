@@ -1,7 +1,7 @@
 var express = require('express')
   , app = express()
 
-var db = require('./db')
+var DB = require('./db')
 var routes = require('./routes/index.js')
 var users = require('./routes/users.js')
 
@@ -21,7 +21,7 @@ app.use(function(err, req, res, next) {
 })
 
 // Connect to Mongo on start
-db.connect('mongodb://localhost:27017/root', function(err) {
+DB.connect('mongodb://localhost:27017/root', function(err) {
   if (err) {
     console.log('Unable to connect to Mongo.')
     process.exit(1)
