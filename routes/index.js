@@ -8,6 +8,10 @@ router.get('/', function(req, res) {
   //   res.render('home.jade')
   // })
 })
+router.get('/register',function(req,res,next){
+	res.render('login', {title: 'ROOT'});
+});
+
 
 
 
