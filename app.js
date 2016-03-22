@@ -1,7 +1,7 @@
 var express = require('express')
   , app = express()
 
-var DB = require('./db')
+var DB = require('db.js')
 var routes = require('./routes/index.js')
 var users = require('./routes/users.js')
 

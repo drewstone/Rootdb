@@ -3,6 +3,9 @@ var express = require('express')
 
 var Users = require('../models/users.js')
 
+/*
+Method for retrieving user information
+*/
 router.get('/getUser/:id', function(req, res) {
   Users.getUser(function(err, data) {
     if (!err) {

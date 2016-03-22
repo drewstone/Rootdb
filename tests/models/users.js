@@ -1,5 +1,6 @@
 var users = require('../../models/users.js')
 var DB    = require('../../db.js')
+var db = DB.get()
 
 describe("Users", function(done) {
   // Establish connection with the database before any tests
