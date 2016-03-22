@@ -23,6 +23,7 @@ router.post('/addUser', function(req, res) {
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     email: req.body.email,
+    zipcode: req.body.zipcode
   }, function(err, data) {
     if (!err) {
       res.send(data);
