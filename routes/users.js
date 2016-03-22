@@ -1,6 +1,7 @@
 var express = require('express')
   , router = express.Router()
 
+var db = require('../db.js')
 var Users = require('../models/users.js')
 
 /*
