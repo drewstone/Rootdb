@@ -21,6 +21,16 @@ var deleteUsers = function(callback) {
   })
 }
 
+var createDevices = function(callback) {
+  db.createCollection("roots", function(err, collection) {
+    if (!err) {
+      callback(null, collection)
+    } else {
+      callback("Error creating collection: Roots", null);
+    }
+  })
+}
+
 module.exports = {
     createUsers: createUsers,
     deleteUsers: deleteUsers,

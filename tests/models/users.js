@@ -1,5 +1,6 @@
 var users = require('../../models/users.js')
 var DB    = require('../../db.js')
+var assert = require('assert')
 var db = DB.get()
 
 describe("Users", function(done) {
@@ -15,6 +16,10 @@ describe("Users", function(done) {
       }
     })
   })
+
+  it("Should do this", function(done) {
+
+  });
 
   afterEach(function(done) {
 
