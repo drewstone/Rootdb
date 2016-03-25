@@ -21,8 +21,7 @@ router.post('/addUser', function(req, res) {
   Users.addUser({
     username: req.body.username,
     password: req.body.password,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
+    firstname: req.body.fullname,
     email: req.body.email,
     zipcode: req.body.zipcode
   }, function(err, data) {
