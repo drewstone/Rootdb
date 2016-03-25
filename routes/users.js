@@ -22,6 +22,7 @@ router.post('/addUser', function(req, res) {
     if (!err) {
       res.send(data);
     } else {
+      console.log(err);
       next(err)
     }
   })
