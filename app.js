@@ -1,13 +1,12 @@
 var express = require('express')
   , app = express()
 
-var DB = require('db.js')
+var DB = require('./db.js')
 var routes = require('./routes/index.js')
 var users = require('./routes/users.js')
 
-app.use(express.static(__dirname + '/pages'));
-app.engine('jade', require('jade').__express)
-app.set('view engine', 'jade')
+app.use(express.static(__dirname + '/views'));
+app.set('view engine', 'ejs')
 
 app.use('/', routes)
 app.use('/users', users)

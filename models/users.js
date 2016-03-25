@@ -1,5 +1,5 @@
 var DB = require('../db.js')
-var db = DB.getDB()
+var db = DB.get()
 
 /*
 Method for adding a new user into the application. Letting MongoDB handle
