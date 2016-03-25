@@ -18,13 +18,7 @@ router.get('/getUser/:id', function(req, res) {
 })
 
 router.post('/addUser', function(req, res) {
-  Users.addUser({
-    username: req.body.username,
-    password: req.body.password,
-    firstname: req.body.fullname,
-    email: req.body.email,
-    zipcode: req.body.zipcode
-  }, function(err, data) {
+  Users.addUser(req.body, function(err, data) {
     if (!err) {
       res.send(data);
     } else {

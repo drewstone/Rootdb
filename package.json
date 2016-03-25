@@ -12,9 +12,10 @@
   "dependencies": {
     "async": "^1.5.2",
     "bluebird": "^3.3.4",
-    "mongodb": "^2.1.7",
+    "body-parser": "^1.15.0",
+    "ejs": "*",
     "express": "*",
-    "ejs": "*"
+    "mongodb": "^2.1.7"
   },
   "devDependencies": {
     "mocha": "^2.4.5",

@@ -1,13 +1,14 @@
 var express = require('express')
-  , router = express.Router()
+  , router = express.Router();
 
-var db = require('../db.js')
-var Index = require('../models/index.js')
+var db = require('../db.js');
+var Index = require('../models/index.js');
 router.get('/', function(req, res) {
-  res.render('login.ejs')
-})
+  res.render('login.ejs');
+});
+
 router.get('/register',function(req,res,next){
-	res.render('login', {title: 'ROOT'});
+	res.render('login.ejs', {title: 'ROOT'});
 });
 
 
