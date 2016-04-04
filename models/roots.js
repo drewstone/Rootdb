@@ -87,6 +87,11 @@ var status = function(device, callback) {
     }
   });
 }
+
+var getAllDevices = function(user, callback){
+
+}
+
 module.exports = {
   addDevice: addDevice,
   getDevice: getDevice,
@@ -95,4 +100,5 @@ module.exports = {
   setPower: setPower,
   setSchedule: setSchedule,
   status: status,
+  getAllDevices: getAllDevices
 }
