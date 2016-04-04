@@ -11,6 +11,10 @@ router.get('/register',function(req,res,next){
 	res.render('login.ejs', {title: 'ROOT'});
 });
 
+router.get('/webapp',function(req,res,next){
+	res.render('rootapp.ejs', {title: 'WebApp'})
+});
+
 
 
 

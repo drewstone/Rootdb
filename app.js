@@ -5,6 +5,7 @@ var DB = require('./db.js');
 var routes = require('./routes/index.js');
 var users = require('./routes/users.js');
 var root = require('./routes/root.js');
+var scheduler = require('./scheduler.js');
 
 app.use(express.static(__dirname + '/views'));
 app.engine('ejs', require('ejs').__express);
@@ -41,7 +42,6 @@ DB.connect('mongodb://127.0.0.1:27017/rootDB', function(err) {
           console.log("-> Collection 'users' created");
         }
       });
-
       DB.get().createCollection("roots", function(err, data) {
         if (!err) {
           console.log("-> Collection 'roots' created");
