@@ -6,8 +6,10 @@ user authentication and a custom table for storing public user information
 */
 
 var addUser = function(user, callback) {
-  DB.get().addUser({user.username, user.password}, function(err, data) {
-    if !(err) {
+  var username = user.username;
+  var password = user.password;
+  DB.get().addUser({username, password}, function(err, data) {
+    if (!err) {
       delete user.password
       addUserInfo(user);
     } else {

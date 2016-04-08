@@ -60,14 +60,14 @@ var setPower = function(device, callback) {
       var accessToken = '780317b0799621815b3d1aed64642ed65a27672c';             //Got to look into this more, don't quite remember the deal with this
       var url = 'https://api.particle.io/v1/devices/' + deviceID + '/relay?access_token=' + accessToken;
       request.post(
-        url, 
+        url,
         {form:{args:'off'}},                                      //Arg should be on when turning on, off when turning off
         function (error, response, body) {
           if (error || response.statusCode != 200) {
             console.log(error);                                   //If error contacting root, have to rechange state in db,
           }                                                       //It might make more sense to change power of root then update db
           else{
-            console.log('successful');    
+            console.log('successful');
           }
         }
       );
@@ -93,7 +93,7 @@ var setSchedule = function(device, callback) {
 
 var status = function(device, callback) {
   DB.get().collection("roots").find({
-    $and: [{user: device.owner}, {id: device.id}]},
+    $and: [{user: device.owner}, {id: device.id}],
   }, function(err, data) {
     if (!err) {
       callback(null, data.status);
