@@ -19,9 +19,9 @@ router.post('/switch/:id', function(req, res) {
 
 router.post('/setPower/:id', function(req, res) {
   Root.setPower({
-    user: req.body.user
+    user: req.body.user,
     id: req.params.id,
-    power: req.body.power_change
+    power: req.body.power_change,
   }, function(err, data) {
     if (!err) {
       res.send(data)
