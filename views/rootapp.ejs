@@ -26,10 +26,54 @@
 		.schedule {
 			text-align: left;
 		}
+		#input:hover {
+			-webkit-transform: scale(1.05);
+			-moz-transform:    scale(1.05);
+			-o-transform:      scale(1.05);
+			-ms-transform:     scale(1.05);
+		}
 	</style>
 
 	<script> <!-- Work Here -->
-
+		var turnOn = function(){
+			    var deviceID = '390031000347343138333038';
+    			var accessToken = '780317b0799621815b3d1aed64642ed65a27672c';
+    			var url = 'https://api.particle.io/v1/devices/' + deviceID + '/relay?access_token=' + accessToken;
+			    request.post(
+			      url, 
+			      {form:{args:'on'}},
+			      function (error, response, body) {
+			        if (error || response.statusCode != 200) {
+			            console.log(error);
+			        }
+			        else{
+			          console.log('successful');
+			        }
+			      }
+			    );
+		}
+		
+		var turnOff = function(){
+				var deviceID = '390031000347343138333038';
+    			var accessToken = '780317b0799621815b3d1aed64642ed65a27672c';
+    			var url = 'https://api.particle.io/v1/devices/' + deviceID + '/relay?access_token=' + accessToken;
+			    request.post(
+			      url, 
+			      {form:{args:'off'}},
+			      function (error, response, body) {
+			        if (error || response.statusCode != 200) {
+			            console.log(error);
+			        }
+			        else{
+			          console.log('successful');
+			        }
+			      }
+			    );
+		}
+		
+		var setSchedule = function(){
+			
+		}
 	</script>
 </head>
 <body>
@@ -48,16 +92,45 @@
 		    	<td>390031000347343138333038</td>
 		    	<td>Off</td> 
 		    	<td>
-		    		<button>On</button> 
-		    		<button>Off</button>
+		    		<button id="input" class="btn btn-secondary" onclick="turnOn()">On</button> 
+		    		<button id="input" class="btn btn-secondary" onclick="turnOff()">Off</button>
 		    	</td>
 		    	<td class="schedule">
-		    		On Time:   <input></input> <button>Set</button>
+		    		On Time:   <input id="input"></input> <button id="input" class="btn btn-secondary">Set</button>
 		    		</br>
-		    		Off Time:   <input></input>
+		    		Off Time:   <input id="input"></input>
 		    		</br>
 		    	</td>
 		  	</tr>
+		  	<tr>
+		    	<td>381476045271948576621928</td>
+		    	<td>Off</td> 
+		    	<td>
+		    		<button id="input" class="btn btn-secondary" onclick="turnOn()">On</button> 
+		    		<button id="input" class="btn btn-secondary" onclick="turnOff()">Off</button>
+		    	</td>
+		    	<td class="schedule">
+		    		On Time:   <input id="input"></input> <button id="input" class="btn btn-secondary">Set</button>
+		    		</br>
+		    		Off Time:   <input id="input"></input>
+		    		</br>
+		    	</td>
+		  	</tr>
+		  	<tr>
+		    	<td>938475647382910293847584</td>
+		    	<td>Off</td> 
+		    	<td>
+		    		<button id="input" class="btn btn-secondary" onclick="turnOn()">On</button> 
+		    		<button id="input" class="btn btn-secondary" onclick="turnOff()">Off</button>
+		    	</td>
+		    	<td class="schedule">
+		    		On Time:   <input id="input"></input> <button id="input" class="btn btn-secondary">Set</button>
+		    		</br>
+		    		Off Time:   <input id="input"></input>
+		    		</br>
+		    	</td>
+		  	</tr>
+		  	
 	  	</tbody>
 	</table>
 </body>

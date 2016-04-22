@@ -15,7 +15,9 @@
     "body-parser": "^1.15.0",
     "ejs": "*",
     "express": "*",
-    "mongodb": "^2.1.7"
+    "mongodb": "^2.1.7",
+    "node-schedule" : "*",
+    "request" : "*"
   },
   "devDependencies": {
     "mocha": "^2.4.5",
