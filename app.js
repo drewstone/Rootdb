@@ -27,7 +27,7 @@ app.use(function(err, req, res, next) {
 });
 
 // Connect to Mongo on start
-DB.connect('mongodb://127.0.0.1:27017/rootDB', function(err) {
+DB.connect('mongodb://162.243.97.29/rootDB', function(err) {
   if (err) {
     console.log('Unable to connect to Mongo.');
     process.exit(1);

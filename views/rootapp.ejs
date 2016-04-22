@@ -4,11 +4,57 @@
 
 	<title>ROOT</title>
 	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-	</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<style>
+		body  {
+			background-color: #E1F2F7;
+			font-family: 'Roboto', sans-serif;
+			letter-spacing: 2px;
+		}
+		.title {
+			color: black;
+			padding-left: 80px;
+			padding-bottom: 50px;
+		}
+		.table {
+			color: #3E4A4A;
+			text-align: center;
+		}
+		.schedule {
+			text-align: left;
+		}
+	</style>
 </head>
 <body>
-Empty
+	<h1 class="title">ROOT</h1>
+	<table style="width:80%" class="table">
+		<thead>
+		  	<tr>
+		    	<td>ROOT ID</td>
+		    	<td>State</td> 
+		    	<td>On / Off</td>
+		    	<td>Set Schedule</td>
+		 	 </tr>
+	 	 </thead>
+	 	 <tbody>
+		  	<tr>
+		    	<td>390031000347343138333038</td>
+		    	<td>Off</td> 
+		    	<td>
+		    		<button>On</button> 
+		    		<button>Off</button>
+		    	</td>
+		    	<td class="schedule">
+		    		On Time:   <input></input> <button>Set</button>
+		    		</br>
+		    		Off Time:   <input></input>
+		    		</br>
+		    	</td>
+		  	</tr>
+	  	</tbody>
+	</table>
 </body>
 </html>
